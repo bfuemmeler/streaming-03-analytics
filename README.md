@@ -256,10 +256,14 @@ Press `Ctrl+c` (both keys together) or `Ctrl+Z` then `Enter` on Windows.
 
 Git add commit push to update Github with technical mods in 1-5
 
+# Link to ReadMe
+
+<https://github.com/bfuemmeler/streaming-03-analytics/blob/main/README.md>
+
 # Run the files
 
-1. In the producer terminal, run the producer file:  uv run python -m streaming.kafka_producer_fuemmeler
-2. In the consumer terminal, run the consumer file: uv run python -m streaming.kafka_consumer_fuemmeler
+1. In the producer terminal, run the producer file:  uv run python -m src.streaming.kafka_producer_fuemmeler
+2. In the consumer terminal, run the consumer file: uv run python -m src.streaming.kafka_consumer_fuemmeler
 3. Go to consumed.sales.csv and confirm changes made (5 messages show)
 
 Git add commit push to update Github with run tests
