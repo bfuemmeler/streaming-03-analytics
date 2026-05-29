@@ -278,15 +278,15 @@ Git add commit push to update Github with run tests
 I modified the Kafka producer by changing the Kafka message key.
 
 Originally, the producer used `region_id` as the message key.
-I changed the key to `payment_type` so messages could be grouped and
-compared by payment method instead of region.
+I changed the key to `product_id` so messages could be grouped and
+compared by product instead of region.
 
-This change allows the consumer to count how many messages are received for each payment type.
+This change allows the consumer to count how many messages are received for each product.
 
 # Run the files again
 
-1. In producer terminal, run producer file:  uv run python -m streaming.kafka_producer_fuemmeler
-2. In consumer terminal, run consumer file:  uv run python -m streaming.kafka_consumer_fuemmeler
+1. In producer terminal, run producer file:  uv run python -m src.streaming.kafka_producer_fuemmeler
+2. In consumer terminal, run consumer file:  uv run python -m src.streaming.kafka_consumer_fuemmeler
 3. Go to consumed.sales.csv & confirm changes made
 
 Git add commit push to update Github with run tests

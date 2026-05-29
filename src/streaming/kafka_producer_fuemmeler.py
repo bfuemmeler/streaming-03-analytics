@@ -247,7 +247,7 @@ def get_message_key(message: dict[str, Any]) -> str:
         return str(message["region_id"])
     except KeyError as error:
         msg = missing_csv_field_message(
-            field="region_id",
+            field="product_id",
             available_fields=list(message.keys()),
         )
         raise KeyError(msg) from error
