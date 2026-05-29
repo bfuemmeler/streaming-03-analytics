@@ -100,8 +100,7 @@ After you get a copy of this repo in your own GitHub account,
 open a machine terminal in your `Repos` folder:
 
 ```bash
-# Replace username with YOUR GitHub username.
-git clone https://github.com/username/streaming-03-analytics
+git clone https://github.com/bfuemmeler/streaming-03-analytics
 
 cd streaming-03-analytics
 code .
@@ -246,3 +245,48 @@ If you see something like this in your terminal: `>>>` or `...`
 You accidentally started Python interactive mode.
 It happens.
 Press `Ctrl+c` (both keys together) or `Ctrl+Z` then `Enter` on Windows.
+
+## Phase 4 Make a Technical Modification
+
+1. Copy consumer_case.py and rename with fuemmeler
+2. Copy producer_case.py and rename with fuemmeler
+3. .env update KAFKA_TOPIC name to fuemmeler
+4. .env update PRODUCER_MESSAGE_COUNT to 5
+5. .env update PRODUCER_MESSAGE_INTERVAL_SECONDS to 4
+
+Git add commit push to update Github with technical mods in 1-5
+
+# Run the files
+
+1. In the producer terminal, run the producer file:  uv run python -m streaming.kafka_producer_fuemmeler
+2. In the consumer terminal, run the consumer file: uv run python -m streaming.kafka_consumer_fuemmeler
+3. Go to consumed.sales.csv and confirm changes made (5 messages show)
+
+Git add commit push to update Github with run tests
+
+## Phase 5 Apply the Skills
+
+1. Make an update to the producer file: change get_message_key from "region_id" to "payment_method"
+2. Update docs/index.md with a Markdown explaining the change:
+
+   # Producer Modification
+
+I modified the Kafka producer by changing the Kafka message key.
+
+Originally, the producer used `region_id` as the message key.
+I changed the key to `payment_type` so messages could be grouped and
+compared by payment method instead of region.
+
+This change allows the consumer to count how many messages are received for each payment type.
+
+# Run the files again
+
+1. In producer terminal, run producer file:  uv run python -m streaming.kafka_producer_fuemmeler
+2. In consumer terminal, run consumer file:  uv run python -m streaming.kafka_consumer_fuemmeler
+3. Go to consumed.sales.csv & confirm changes made
+
+Git add commit push to update Github with run tests
+
+# Update index.md with documentations
+
+Git add commit push to update Github
